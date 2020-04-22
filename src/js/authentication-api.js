@@ -2,7 +2,7 @@ var AuthenticationApi = (() => {
     let isEmpty = (value) => value === ""  || value === undefined || value === null
 
     let isValid = (user, password) => {
-        return user == "user1" && password == "pwd123"
+        return user === "user1" && password === "pwd123"
     };
 
     let login = (user, password, callback) => {
@@ -27,3 +27,5 @@ var AuthenticationApi = (() => {
         login: login
     }
 })();
+
+export default AuthenticationApi;
