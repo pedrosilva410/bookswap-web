@@ -1,44 +1,46 @@
 import React, {useState} from 'react';
 import './styles.css'
 import AuthenticationApi from '../../js/authentication-api'
-
-
+import { useHistory } from 'react-router-dom';
 
 export default function SignIn() {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    const [classEmail, setClassEmail] = useState('input');
+    const [classPass, setClassPass] = useState('input');
+    const history = useHistory();
 
     const handleClick = () => {
 
-        if(email.target.value==="" && pass.target.value===""){
-            email.classList.add('error');
-            pass.classList.add('error');
-            alert("you have to fill the fields");
+        if(email==="" && pass===""){
+            setClassPass('error') 
+            setClassEmail('error')
         }else if(email===""){
-            email.classList.add('error')
-            window.alert("you have to fill the field email");
+            setClassEmail('error') 
         }else if(pass===""){
-            pass.classList.add('error')
-            alert("you have to fill the field password");
+            setClassPass('error') 
         }else{
            AuthenticationApi.login(email, pass, (error, response) => {
             if(error){
                alert(error.message); 
             }else{
                 console.log('utilizador autenticado');
+                localStorage.setItem('loginToken', response.token);
+                history.push('/')
             }
            })
-        }
+         }
     }
 
     return(
+
         <main>
-            <form onSubmit={(event) => event.preventDefault()}>
+            <form class="signin__form" onSubmit={(event) => event.preventDefault()}>
                 <div className="textBox">
-                    <input onChange={(event) => setEmail(event.target.value)} value={email} className="input__text" type="text" placeholder="Email"/>
-                    <input onChange={(event) => setPass(event.target.value)} value={pass} className="input__pass" type="password" placeholder="Password"/>
+                    <input onChange={(event) => setEmail(event.target.value)} value={email} className={classEmail} type="text" placeholder="Email"/>
+                    <input onChange={(event) => setPass(event.target.value)} value={pass} className={classPass} type="password" placeholder="Password"/>
                 </div>
-                <button onClick={() => handleClick}>Sign In</button>
+                <button className='signin__button' onClick={() => handleClick()}>Sign In</button>
             </form>
         </main>
     )

@@ -1,4 +1,4 @@
-form{
+.signin__form{
     width: 530px;
     height: 110px;
     background-color: rgba(224, 221, 209, .5) ;
@@ -16,7 +16,7 @@ form{
     align-items: center;
 }
 
-input{
+.input{
     height: 30px;
     width: 225px;
     box-sizing: border-box;
@@ -27,7 +27,7 @@ input{
     font-size: 14px;
 }
 
-button{
+.signin__button{
     width: 120px;   
     height: 30px;
     background-color: #ded9cc;
@@ -36,11 +36,18 @@ button{
     font-size: 14px;
 }
 
-button:hover{
+.signin__button:hover{
     background-color: #fdf8e7;
     cursor: pointer;
 }
 
 .error{
+    height: 30px;
+    width: 225px;
+    box-sizing: border-box;
+    background-color: rgba(224, 221, 209, 0);
+    border-style: none;
+    padding-left: 10px;
+    font-size: 14px;
     border-bottom: red 1px solid;
 }
