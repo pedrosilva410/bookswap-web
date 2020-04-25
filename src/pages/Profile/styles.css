@@ -1,0 +1,52 @@
+.userInfo{
+    display: flex;
+    margin-left: 270px;
+}
+
+.userImg{
+    width: 100px;
+    height: 100px;
+    padding-right: 30px;
+}
+
+.userName{
+    font-size: 18px;
+}
+
+.userBio{
+    width: 50%;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.userContact{
+    display: flex;
+    width: 100%;
+}
+
+.contactText{
+    padding-right: 30px;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.booksTitle{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.userBooks{
+    margin-top: 20px;
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    overflow: scroll;
+}
+
+.Books{
+    width: 700px;
+    height: 200px;
+    margin: 40px;
+    border-radius: 10px;
+    background-color: #E0DDD1;
+}
