@@ -10,7 +10,7 @@ export default function Contact() {
       <h1 className="contact__title">Contact Us</h1>
       <div className="contact__mainContent">
         <form className="contact__form">
-          <label>Name</label>
+          <label>Namo</label>
           <input className="contact__input"></input>
           <label>Email</label>
           <input className="contact__input"></input>
