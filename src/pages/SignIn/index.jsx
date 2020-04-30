@@ -25,6 +25,7 @@ export default function SignIn() {
         } else {
           console.log("utilizador autenticado");
           localStorage.setItem("loginToken", response.token);
+          localStorage.setItem('email', email);
           history.push("/");
         }
       });
