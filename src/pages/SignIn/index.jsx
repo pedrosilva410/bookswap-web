@@ -27,6 +27,7 @@ export default function SignIn() {
           localStorage.setItem("loginToken", response.token);
           localStorage.setItem('email', email);
           history.push("/");
+          window.location.reload();
         }
       });
     }
