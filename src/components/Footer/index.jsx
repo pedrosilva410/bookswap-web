@@ -1,17 +1,62 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
-import './styles.css'
+import { Link } from 'react-router-dom';
+import './styles.css';
 
 export default function Footer() {
-    return(
-        <footer>
+  if (localStorage.length > 1) {
+    return (
+      <footer>
         <p>reading is not a crime</p>
         <ul className='nav'>
-            <li><Link to='/faq' className='nav__item'>FAQ</Link></li>
-            <li><Link to='/contact' className='nav__item'>CONTACT</Link></li>
-            <li><Link to='/signin' className='nav__item'>SIGN IN</Link></li>
-            <li><Link to='/signup' className='nav__item'>SIGN UP</Link></li>
+          <li>
+            <Link to='/faq' className='nav__item'>
+              FAQ
+            </Link>
+          </li>
+          <li>
+            <Link to='/contact' className='nav__item'>
+              CONTACT
+            </Link>
+          </li>
+          <li
+            onClick={() => {
+              localStorage.clear();
+              window.location.reload();
+            }}
+            className='nav__item'
+          >
+            SIGN OUT
+          </li>
         </ul>
-        </footer>
-    )
+      </footer>
+    );
+  } else {
+    return (
+      <footer>
+        <p>reading is not a crime</p>
+        <ul className='nav'>
+          <li>
+            <Link to='/faq' className='nav__item'>
+              FAQ
+            </Link>
+          </li>
+          <li>
+            <Link to='/contact' className='nav__item'>
+              CONTACT
+            </Link>
+          </li>
+          <li>
+            <Link to='/signin' className='nav__item'>
+              SIGN IN
+            </Link>
+          </li>
+          <li>
+            <Link to='/signup' className='nav__item'>
+              SIGN UP
+            </Link>
+          </li>
+        </ul>
+      </footer>
+    );
+  }
 }
