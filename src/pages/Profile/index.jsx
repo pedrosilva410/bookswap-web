@@ -5,16 +5,16 @@ import './styles.css'
 export default function Profile() {
     return(
         <main>
-            <div className='userInfo'>
-                <img className='userImg' alt= 'userPhoto' src={UserPhoto}/>
-                <div className='userBox'>
-                    <div className='userText'>
-                        <h3 className='userName'>User Name</h3>
-                        <p className='userBio'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolor, quos tempora soluta sequi quae perferendis suscipit beatae officia tenetur amet, nobis maxime. Sapiente maxime voluptatum aperiam. Recusandae, in ipsam.</p>
+            <div className='userInfo1'>
+                <img className='userImg1' alt= 'userPhoto1' src={UserPhoto}/>
+                <div className='userBox1'>
+                    <div className='userText1'>
+                        <h3 className='userName1'>{localStorage.getItem('email')}</h3>
+                        <p className='userBio1'>biooooooooooooooooo</p>
                     </div>
-                    <div className='userContact'>
-                        <p className='contactText'>Email: user@mail.com</p>
-                        <p className='contactText'>Phone: 911111111</p>
+                    <div className='userContact1'>
+                        <p className='contactText1'>Email: user@mail.com</p>
+                        <p className='contactText1'>Phone: 911111111</p>
                     </div>
                 </div>
             </div>

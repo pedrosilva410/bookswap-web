@@ -1,30 +1,30 @@
-.userInfo{
+.userInfo1{
     display: flex;
-    margin-left: 270px;
+    margin-right: 270px;
 }
 
-.userImg{
+.userImg1{
     width: 100px;
     height: 100px;
     padding-right: 30px;
 }
 
-.userName{
+.userName1{
     font-size: 18px;
 }
 
-.userBio{
+.userBio1{
     width: 50%;
     padding-top: 20px;
     font-size: 14px;
 }
 
-.userContact{
+.userContact1{
     display: flex;
     width: 100%;
 }
 
-.contactText{
+.contactText1{
     padding-right: 30px;
     padding-top: 20px;
     font-size: 14px;

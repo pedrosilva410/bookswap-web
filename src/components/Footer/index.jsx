@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
+import { useHistory } from "react-router-dom";
 
 export default function Footer() {
+  const history = useHistory();
   if (localStorage.length > 1) {
     return (
       <footer>
@@ -21,6 +23,7 @@ export default function Footer() {
           <li
             onClick={() => {
               localStorage.clear();
+              history.push("/");
               window.location.reload();
             }}
             className='nav__item'
