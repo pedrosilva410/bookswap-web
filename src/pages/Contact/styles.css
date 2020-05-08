@@ -1,78 +1,75 @@
-.contact__form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 130px;
-    padding-right: 20px;
-    width: 100%;
-    height: 60%;
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 130px;
+  padding-right: 20px;
+  width: 100%;
+  height: 60%;
 }
 
-.contact__mainContent{
-    display: flex;
+.contact__mainContent {
+  display: flex;
 }
 
-.contact__dev{
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-top: 100px;
-padding-left: 20px;
-border-left: 1px solid black;
-justify-content: center;
+.contact__dev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.socialMedia{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
+.socialMedia {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
 }
 
-.socialMediaImg{
-    margin-top: 20px;
-    width: 50px;
-    height: 50px;
+.socialMediaImg {
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
 }
-a{
-    color: black;
-    text-decoration: underline;
-}
-
-label{
-    width: 100%;
-    text-align: left;
-    margin-top: 10px;
+a {
+  color: black;
+  text-decoration: underline;
 }
 
-.contact__input{
-    width: 320px;
-    height: 30px;
-    font-size: 14px;
-    padding-left: 10px;
+label {
+  width: 100%;
+  text-align: left;
+  margin-top: 10px;
 }
 
-.contact__textarea{
-    resize: none;
-    width:320px ;
-    height:160px ;
-    padding-left: 10px;
-    margin-bottom: 20px;
+.contact__input {
+  width: 320px;
+  height: 30px;
+  font-size: 14px;
+  padding-left: 10px;
 }
 
-.devPedro{
-padding-bottom: 40px;
-border-bottom: 1px solid black;
+.contact__textarea {
+  resize: none;
+  width: 320px;
+  height: 160px;
+  padding-left: 10px;
+  margin-bottom: 20px;
 }
 
-.devDiogo{
-    padding-top: 40px;
+.devPedro {
+  margin-top: 50px;
+  padding-right: 10px;
+  border-right: 1px solid black;
 }
 
-.contatct__button{
-    width: 170px;
-    height: 40px;
-    font-size: 14px;
-    background-color: #e0ddd1;
-    
+.devDiogo {
+  padding-top: 50px;
+  padding-left: 10px;
+}
+
+.contatct__button {
+  width: 170px;
+  height: 40px;
+  font-size: 14px;
+  background-color: #e0ddd1;
 }
