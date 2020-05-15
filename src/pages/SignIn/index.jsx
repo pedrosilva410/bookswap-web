@@ -4,28 +4,28 @@ import AuthenticationApi from "../../js/authentication-api";
 import { useHistory } from "react-router-dom";
 
 export default function SignIn() {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-  const [classEmail, setClassEmail] = useState("input");
-  const [classPass, setClassPass] = useState("input");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [classUserName, setClassUserName] = useState("input");
+  const [classPassword, setClassPassword] = useState("input");
   const history = useHistory();
 
   const handleClick = () => {
-    if (email === "" && pass === "") {
-      setClassPass("error");
-      setClassEmail("error");
-    } else if (email === "") {
-      setClassEmail("error");
-    } else if (pass === "") {
-      setClassPass("error");
+    if (userName === "" && password === "") {
+      setClassPassword("error");
+      setClassUserName("error");
+    } else if (userName === "") {
+      setClassUserName("error");
+    } else if (password === "") {
+      setClassPassword("error");
     } else {
-      AuthenticationApi.login(email, pass, (error, response) => {
-        if (error) {
-          alert(error.message);
+      AuthenticationApi.login(userName, password).then( (response) => {
+        if (response.authenticated===false) {
+          alert("authentication failed");
         } else {
           console.log("utilizador autenticado");
           localStorage.setItem("loginToken", response.token);
-          localStorage.setItem('email', email);
+          localStorage.setItem('email', userName);
           history.push("/");
           window.location.reload();
         }
@@ -35,29 +35,31 @@ export default function SignIn() {
 
   return (
     <main>
+      <h1 className="signin__title">Sign In</h1>
+
       <form class="signin__form" onSubmit={(event) => event.preventDefault()}>
         <div className="textBox">
           <input
             onChange={(event) => {
-                setEmail(event.target.value)
+                setUserName(event.target.value)
                 if(event.target.value !== ""){
-                    setClassEmail('input')
+                    setClassUserName('input')
                 }
             }}
-            value={email}
-            className={classEmail}
+            value={userName}
+            className={classUserName}
             type="text"
-            placeholder="Email"
+            placeholder="User Name"
           />
           <input
             onChange={(event) => {
-                setPass(event.target.value)
+                setPassword(event.target.value)
                 if(event.target.value !== ""){
-                    setClassPass('input')
+                    setClassPassword('input')
                 }
             }}
-            value={pass}
-            className={classPass}
+            value={password}
+            className={classPassword}
             type="password"
             placeholder="Password"
           />

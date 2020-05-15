@@ -3,112 +3,89 @@ import "./styles.css";
 import { useHistory } from "react-router-dom";
 
 export default function SignIn() {
-  const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-  const [confirmPass, setConfirmPass] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-  const [className, setClassName] = useState("input");
-  const [classUsername, setClassUsername] = useState("input");
+  const [classUserName, setClassUserName] = useState("input");
   const [classEmail, setClassEmail] = useState("input");
-  const [classPass, setClassPass] = useState("input");
-  const [classConfirmPass, setClassConfirmPass] = useState("input");
+  const [classPassword, setClassPassword] = useState("input");
+  const [classConfirmPassword, setClassConfirmPassword] = useState("input");
 
   const history = useHistory();
 
   const handleClick = () => {
     if (
-      name === "" &&
-      username === "" &&
+      userName === "" &&
       email === "" &&
-      pass === "" &&
-      confirmPass === ""
+      password === "" &&
+      confirmPassword === ""
     ) {
-      setClassName("error");
-      setClassUsername("error");
+      setClassUserName("error");
       setClassEmail("error");
-      setClassPass("error");
-      setClassConfirmPass("error");
-    } else if (name === "") {
-      setClassName("error");
-      if (username === "") {
-        setClassUsername("error");
-      }
+      setClassPassword("error");
+      setClassConfirmPassword("error");
+    } else if (userName === "") {
+      setClassUserName("error");
       if (email === "") {
         setClassEmail("error");
       }
-      if (pass === "") {
-        setClassPass("error");
+      if (password === "") {
+        setClassPassword("error");
       }
-      if (confirmPass === "") {
-        setClassConfirmPass("error");
-      }
-    } else if (username === "") {
-      setClassUsername("error");
-      if (email === "") {
-        setClassEmail("error");
-      }
-      if (pass === "") {
-        setClassPass("error");
-      }
-      if (confirmPass === "") {
-        setClassConfirmPass("error");
+      if (confirmPassword === "") {
+        setClassConfirmPassword("error");
       }
     } else if (email === "") {
       setClassEmail("error");
-      if (pass === "") {
-        setClassPass("error");
+      if (password === "") {
+        setClassPassword("error");
       }
-      if (confirmPass === "") {
-        setClassConfirmPass("error");
+      if (confirmPassword === "") {
+        setClassConfirmPassword("error");
       }
-    } else if (pass === "") {
-      setClassPass("error");
-      if (confirmPass === "") {
-        setClassConfirmPass("error");
+    } else if (password === "") {
+      setClassPassword("error");
+      if (confirmPassword === "") {
+        setClassConfirmPassword("error");
       }
-    } else if (confirmPass === "") {
-      setClassConfirmPass("error");
+    } else if (confirmPassword === "") {
+      setClassConfirmPassword("error");
     } else {
-      history.push("/");
+      if (password === confirmPassword) {
+        history.push("/");
+      } else {
+        alert("passwords are different");
+        setClassConfirmPassword("error");
+        setClassPassword("error");
+      }
     }
   };
 
   return (
     <main>
+      <h1 className="signup__title">Sign Up</h1>
       <form class="signup__form" onSubmit={(event) => event.preventDefault()}>
         <input
           onChange={(event) => {
-            setName(event.target.value);
+            setUserName(event.target.value);
             if (event.target.value !== "") {
-              setClassName("input");
+              setClassUserName("input");
             }
           }}
-          value={name}
-          className={className}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          onChange={(event) => {
-            setUsername(event.target.value);
-            if (event.target.value !== "") {
-              setClassUsername("input");
-            }
-          }}
-          value={username}
-          className={classUsername}
+          value={userName}
+          className={classUserName}
           type="text"
           placeholder="Username"
         />
         <input
           onChange={(event) => {
-              setEmail(event.target.value)
-              if(event.target.value !== ""){
-                setClassEmail('input')
+            setEmail(event.target.value);
+            if (event.target.value !== "") {
+              setClassEmail("input");
             }
-            }}
+          }}
           value={email}
           className={classEmail}
           type="text"
@@ -116,25 +93,25 @@ export default function SignIn() {
         />
         <input
           onChange={(event) => {
-              setPass(event.target.value)
-              if(event.target.value !== ""){
-                setClassPass('input')
+            setPassword(event.target.value);
+            if (event.target.value !== "") {
+              setClassPassword("input");
             }
-            }}
-          value={pass}
-          className={classPass}
+          }}
+          value={password}
+          className={classPassword}
           type="password"
           placeholder="Password"
         />
         <input
           onChange={(event) => {
-              setConfirmPass(event.target.value)
-              if(event.target.value !== ""){
-                setClassConfirmPass('input')
+            setConfirmPassword(event.target.value);
+            if (event.target.value !== "") {
+              setClassConfirmPassword("input");
             }
-            }}
-          value={confirmPass}
-          className={classConfirmPass}
+          }}
+          value={confirmPassword}
+          className={classConfirmPassword}
           type="password"
           placeholder="Confirm Password"
         />
