@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { useHistory } from "react-router-dom";
+import AccountApi from "../../js/account-api";
 
 export default function SignIn() {
   const [userName, setUserName] = useState("");
@@ -54,6 +55,7 @@ export default function SignIn() {
       setClassConfirmPassword("error");
     } else {
       if (password === confirmPassword) {
+        AccountApi.createAccount(userName, email, password);
         history.push("/");
       } else {
         alert("passwords are different");

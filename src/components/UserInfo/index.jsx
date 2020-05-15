@@ -7,7 +7,7 @@ export default function UserInfo() {
   return (
     <div className="userInfo">
       <button className="trade__button">Trade Book</button>
-      <p className="userName">{localStorage.getItem("email")}</p>
+      <p className="userName">{localStorage.getItem("userName")}</p>
       <Link to="/profile">
         <img className="userImgHome" alt="user" src={userImg} />
       </Link>

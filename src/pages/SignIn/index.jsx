@@ -23,9 +23,8 @@ export default function SignIn() {
         if (response.authenticated===false) {
           alert("authentication failed");
         } else {
-          console.log("utilizador autenticado");
           localStorage.setItem("loginToken", response.token);
-          localStorage.setItem('email', userName);
+          localStorage.setItem('userName', userName);
           history.push("/");
           window.location.reload();
         }
