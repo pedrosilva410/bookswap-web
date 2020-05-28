@@ -7,7 +7,7 @@ var AccountApi = (() => {
              headers: {
                 'Content-Type': 'application/json'
               },
-            body: JSON.stringify({ "userName": userName, "email": email, "password": password })
+            body: JSON.stringify({ "userName": userName, "email": email, "password": password, "bio":"add a bio", "contact":"911111" })
         }).then(res => res.json())
     }
 

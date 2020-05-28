@@ -24,6 +24,7 @@ export default function SignIn() {
           alert("authentication failed");
         } else {
           localStorage.setItem("loginToken", response.token);
+          localStorage.setItem("userId", response.userId)
           localStorage.setItem('userName', userName);
           history.push("/");
           window.location.reload();
