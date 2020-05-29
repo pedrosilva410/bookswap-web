@@ -3,6 +3,7 @@ import UserPhoto from "../../assets/SVG/account.svg";
 import "./styles.css";
 import GetAccountApi from "../../js/get-account-api";
 import { useState } from "react";
+import UserBooks from "../../components/UserBooks"
 
 export default function Profile() {
   const [accountInfo, setAccountInfo] = useState({});
@@ -28,14 +29,7 @@ export default function Profile() {
         </div>
       </div>
 
-      <h3 className="booksTitle">Books</h3>
-
-      <div className="userBooks">
-        <div className="Books"></div>
-        <div className="Books"></div>
-        <div className="Books"></div>
-        <div className="Books"></div>
-      </div>
+      <UserBooks/>
     </main>
   );
 }

@@ -1,6 +1,6 @@
-var GetBookApi = (() => {
+var GetUserBooksApi = (() => {
 
-    let getBook = (userId) => {
+    let getBooks = (userId) => {
 
         return fetch(`http://localhost:8080/account/${userId}/books`, {
             method: 'GET',
@@ -11,9 +11,9 @@ var GetBookApi = (() => {
     }
 
     return {
-        getBook: getBook
+        getBooks: getBooks
     }
 
 })();
 
-export default GetBookApi;
+export default GetUserBooksApi;

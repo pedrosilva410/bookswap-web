@@ -1,0 +1,15 @@
+.userBooks{
+    margin-top: 20px;
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    overflow: scroll;
+}
+
+.Books{
+    width: 700px;
+    height: 200px;
+    margin: 40px;
+    border-radius: 10px;
+    background-color: #E0DDD1;
+}
