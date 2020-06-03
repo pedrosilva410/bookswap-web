@@ -13,8 +13,8 @@ export default function SignIn() {
   const [classEmail, setClassEmail] = useState("input");
   const [classPassword, setClassPassword] = useState("input");
   const [classConfirmPassword, setClassConfirmPassword] = useState("input");
-  const defaultbio="Add a bio"
-  const defaultContact="Add a phone number"
+  const defaultbio = "Add a bio";
+  const defaultContact = "Add a phone number";
 
   const history = useHistory();
 
@@ -57,7 +57,13 @@ export default function SignIn() {
       setClassConfirmPassword("error");
     } else {
       if (password === confirmPassword) {
-        AccountApi.createAccount(userName, email, password, defaultbio, defaultContact);
+        AccountApi.createAccount(
+          userName,
+          email,
+          password,
+          defaultbio,
+          defaultContact
+        );
         history.push("/");
       } else {
         alert("passwords are different");
@@ -70,7 +76,10 @@ export default function SignIn() {
   return (
     <main>
       <h1 className="signup__title">Sign Up</h1>
-      <form className="signup__form" onSubmit={(event) => event.preventDefault()}>
+      <form
+        className="signup__form"
+        onSubmit={(event) => event.preventDefault()}
+      >
         <input
           onChange={(event) => {
             setUserName(event.target.value);

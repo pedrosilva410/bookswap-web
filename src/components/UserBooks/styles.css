@@ -1,15 +1,39 @@
-.userBooks{
-    margin-top: 20px;
-    width: 800px;
-    height: 400px;
-    background-color: white;
-    overflow: scroll;
+.userBooks {
+  margin-top: 20px;
+  width: 800px;
+  height: 400px;
+  background-color: white;
+  overflow: scroll;
 }
 
-.Books{
-    width: 700px;
-    height: 200px;
-    margin: 40px;
-    border-radius: 10px;
-    background-color: #E0DDD1;
+.userBooks__book {
+  width: 680px;
+  height: 100px;
+  margin: 40px;
+  border-radius: 10px;
+  background-color: #e0ddd1;
+  display: flex;
+  padding: 20px 20px;
+}
+
+.userBooks__Title {
+  margin: 20px 0 0 10px;
+}
+
+.userBooks__image {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.userBooks__title {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.userBooks__description {
+  width: 500px;
+  word-wrap: break-word;
+  margin-top: 10px;
+  font-size: 14px;
 }

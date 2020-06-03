@@ -1,28 +1,35 @@
 import React from "react";
 import "./styles.css";
 import search from "../../assets/SVG/search.svg";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <main>
-      <section className="section1">
+      <section className="home__section">
         <form className="home__form">
           <input
             placeholder="Seach Book"
-            className="search__input"
+            className="home__search__input"
             type="text"
           />
           <input
             placeholder="Location"
-            className="location__input"
+            className="home__location__input"
             type="select"
           />
-          <div className="vline"></div>
-          <button className="search__btn">
-            <img className="search__img" src={search} alt="search button" />
-          </button>
+          <div className="home__vline"></div>
+          <Link to="/searchpage">
+            <button className="home__search__btn">
+              <img
+                className="home__search__img"
+                src={search}
+                alt="search button"
+              />
+            </button>
+          </Link>
         </form>
-        <p className="p__cat">categories</p>
+        <p className="home__categories">categories</p>
       </section>
     </main>
   );

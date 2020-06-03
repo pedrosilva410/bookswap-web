@@ -3,7 +3,7 @@ import UserPhoto from "../../assets/SVG/account.svg";
 import "./styles.css";
 import GetAccountApi from "../../js/get-account-api";
 import { useState } from "react";
-import UserBooks from "../../components/UserBooks"
+import UserBooks from "../../components/UserBooks";
 
 export default function Profile() {
   const [accountInfo, setAccountInfo] = useState({});
@@ -15,21 +15,21 @@ export default function Profile() {
 
   return (
     <main>
-      <div className="userInfo1">
-        <img className="userImg1" alt="userPhoto1" src={UserPhoto} />
-        <div className="userBox1">
-          <div className="userText1">
-            <h3 className="userName1">{accountInfo.userName}</h3>
-            <p className="userBio1">{accountInfo.bio}</p>
+      <div className="profile__userInfo">
+        <img className="profile__userImg" alt="userPhoto1" src={UserPhoto} />
+        <div className="profile__userBox">
+          <div className="profile__userText">
+            <h3 className="profile__userName">{accountInfo.userName}</h3>
+            <p className="profile__userBio">{accountInfo.bio}</p>
           </div>
-          <div className="userContact1">
-            <p className="contactText1">Email: {accountInfo.email}</p>
-            <p className="contactText1">Phone: {accountInfo.contact}</p>
+          <div className="profile__userContact">
+            <p className="profile__contactText">Email: {accountInfo.email}</p>
+            <p className="profile__contactText">Phone: {accountInfo.contact}</p>
           </div>
         </div>
       </div>
 
-      <UserBooks/>
+      <UserBooks />
     </main>
   );
 }

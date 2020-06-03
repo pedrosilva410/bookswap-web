@@ -1,6 +1,6 @@
 var GetUserBooksApi = (() => {
 
-    let getBooks = (userId) => {
+    let getUserBooks = (userId) => {
 
         return fetch(`http://localhost:8080/account/${userId}/books`, {
             method: 'GET',
@@ -11,7 +11,7 @@ var GetUserBooksApi = (() => {
     }
 
     return {
-        getBooks: getBooks
+        getUserBooks: getUserBooks
     }
 
 })();
