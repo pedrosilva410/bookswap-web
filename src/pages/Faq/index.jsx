@@ -19,15 +19,15 @@ export default function Faq() {
   return (
     <main>
       <h1 className="faqTitle">Frequent Answer and Questions</h1>
-      <div className="question__list">
+      <div className="faq__question__list">
         {questions.map((value, index) => {
           const answerNo = index;
           return (
             <div>
-              <h3 className="question" value={value} key={index}>
+              <h3 className="faq__question" value={value} key={index}>
                 Q: {value}
               </h3>
-              <p className="answer"> {answers[answerNo]} </p>
+              <p className="faq__answer"> {answers[answerNo]} </p>
             </div>
           );
         })}

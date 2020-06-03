@@ -10,7 +10,7 @@ export default function Header() {
       <header>
         <UserInfo />
         <Link to="/">
-          <img className="logo" src={logo} alt="Book Swap Logo" />
+          <img className="header__logo" src={logo} alt="Book Swap Logo" />
         </Link>
       </header>
     );
@@ -18,7 +18,7 @@ export default function Header() {
     return (
       <header>
         <Link to="/">
-          <img className="logo" src={logo} alt="Book Swap Logo" />
+          <img className="header__logo" src={logo} alt="Book Swap Logo" />
         </Link>
       </header>
     );

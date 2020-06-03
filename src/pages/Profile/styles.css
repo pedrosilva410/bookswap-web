@@ -1,52 +1,31 @@
-.userInfo1{
-    display: flex;
-    margin-right: 270px;
+.profile__userInfo {
+  display: flex;
+  margin-right: 270px;
 }
 
-.userImg1{
-    width: 100px;
-    height: 100px;
-    padding-right: 30px;
+.profile__userImg {
+  width: 100px;
+  height: 100px;
+  padding-right: 30px;
 }
 
-.userName1{
-    font-size: 18px;
+.profile__userName {
+  font-size: 18px;
 }
 
-.userBio1{
-    width: 50%;
-    padding-top: 20px;
-    font-size: 14px;
+.profile__userBio {
+  width: 50%;
+  padding-top: 20px;
+  font-size: 14px;
 }
 
-.userContact1{
-    display: flex;
-    width: 100%;
+.profile__userContact {
+  display: flex;
+  width: 100%;
 }
 
-.contactText1{
-    padding-right: 30px;
-    padding-top: 20px;
-    font-size: 14px;
-}
-
-.booksTitle{
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-.userBooks{
-    margin-top: 20px;
-    width: 800px;
-    height: 400px;
-    background-color: white;
-    overflow: scroll;
-}
-
-.Books{
-    width: 700px;
-    height: 200px;
-    margin: 40px;
-    border-radius: 10px;
-    background-color: #E0DDD1;
+.profile__contactText {
+  padding-right: 30px;
+  padding-top: 20px;
+  font-size: 14px;
 }

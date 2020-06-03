@@ -6,14 +6,14 @@ var GetAccountApi = (() => {
 
         return fetch(`http://localhost:8080/account/${userId}`, {
             method: 'GET',
-             headers: {
+            headers: {
                 'Content-Type': 'application/json'
-              },
+            },
         }).then(res => res.json())
     }
 
     return {
-        getAccount:getAccount
+        getAccount: getAccount
     }
 
 })();

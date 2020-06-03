@@ -5,7 +5,6 @@ import instragram from "../../assets/SVG/instagram.svg";
 import twitter from "../../assets/SVG/twitter.svg";
 
 export default function Contact() {
-
   return (
     <main>
       <h1 className="contact__title">Contact Us</h1>
@@ -14,14 +13,14 @@ export default function Contact() {
           <a href="mailto:pedrogdsilva410@gmail.com">
             pedrogdsilva410@gmail.com
           </a>
-          <div className="socialMedia">
+          <div className="contact__socialMedia">
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/pedrogdsilva"
             >
               <img
-                className="socialMediaImg"
+                className="contact__socialMediaImg"
                 src={facebook}
                 alt="social media"
               />
@@ -32,7 +31,7 @@ export default function Contact() {
               href="https://www.instagram.com/pedrogdsilva/"
             >
               <img
-                className="socialMediaImg"
+                className="contact__socialMediaImg"
                 src={instragram}
                 alt="social media"
               />
@@ -43,7 +42,7 @@ export default function Contact() {
               href="https://twitter.com/pedrogdsilva410"
             >
               <img
-                className="socialMediaImg"
+                className="contact__socialMediaImg"
                 src={twitter}
                 alt="social media"
               />
@@ -52,14 +51,14 @@ export default function Contact() {
         </div>
         <div className="devDiogo">
           <a href="mailto:diasdiogo630@gmail.com">diasdiogo630@gmail.com</a>
-          <div className="socialMedia">
+          <div className="contact__socialMedia">
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/diogofdias"
             >
               <img
-                className="socialMediaImg"
+                className="contact__socialMediaImg"
                 src={facebook}
                 alt="social media"
               />
@@ -70,7 +69,7 @@ export default function Contact() {
               href="https://www.instagram.com/_dfrd_01/"
             >
               <img
-                className="socialMediaImg"
+                className="contact__socialMediaImg"
                 src={instragram}
                 alt="social media"
               />

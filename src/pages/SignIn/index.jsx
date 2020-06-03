@@ -19,13 +19,13 @@ export default function SignIn() {
     } else if (password === "") {
       setClassPassword("error");
     } else {
-      AuthenticationApi.login(userName, password).then( (response) => {
-        if (response.authenticated===false) {
+      AuthenticationApi.login(userName, password).then((response) => {
+        if (response.authenticated === false) {
           alert("authentication failed");
         } else {
           localStorage.setItem("loginToken", response.token);
-          localStorage.setItem("userId", response.userId)
-          localStorage.setItem('userName', userName);
+          localStorage.setItem("userId", response.userId);
+          localStorage.setItem("userName", userName);
           history.push("/");
           window.location.reload();
         }
@@ -41,22 +41,22 @@ export default function SignIn() {
         <div className="textBox">
           <input
             onChange={(event) => {
-                setUserName(event.target.value)
-                if(event.target.value !== ""){
-                    setClassUserName('input')
-                }
+              setUserName(event.target.value);
+              if (event.target.value !== "") {
+                setClassUserName("input");
+              }
             }}
             value={userName}
             className={classUserName}
             type="text"
-            placeholder="User Name"
+            placeholder="Username"
           />
           <input
             onChange={(event) => {
-                setPassword(event.target.value)
-                if(event.target.value !== ""){
-                    setClassPassword('input')
-                }
+              setPassword(event.target.value);
+              if (event.target.value !== "") {
+                setClassPassword("input");
+              }
             }}
             value={password}
             className={classPassword}
