@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import search from "../../assets/SVG/search.svg";
+import SearchBooks from "../../components/SearchBooks"
 export default function SearchPage() {
   return (
     <main className="main__search">
@@ -16,7 +17,8 @@ export default function SearchPage() {
           <img className="search__img" src={search} alt="search button" />
         </button>
       </div>
-      <div className="div__books"></div>
+
+      <SearchBooks />
     </main>
   );
 }

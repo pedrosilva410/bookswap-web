@@ -6,12 +6,11 @@ import GetAllBooksApi from "../../js/get-all-books-api";
 export default function UserBooks() {
   const [bookInfo, setBookInfo] = useState([]);
 
-  const bookInfoReq = GetAllBooksApi.getBooks(localStorage.getItem("userId"));
+  const bookInfoReq = GetAllBooksApi.getBooks();
   bookInfoReq.then((res) => setBookInfo(res));
-
+  
   return (
     <Fragment>
-      <h3 className="booksTitle">Books</h3>
       <ul className="userBooks">
         {bookInfo.map(({ id, title, description, image }) => (
           <li key={id}>
