@@ -1,6 +1,6 @@
 var GetAllBooksApi = (() => {
 
-    let getBooks = (userId) => {
+    let getBooks = () => {
 
         return fetch(`http://localhost:8080/books`, {
             method: 'GET',
