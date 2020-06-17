@@ -11,6 +11,7 @@ footer {
 .footer__nav {
   display: flex;
   border-left: black 1px solid;
+  margin: 13px 0;
 }
 
 .footer__nav__item {
