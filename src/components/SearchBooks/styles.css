@@ -1,0 +1,42 @@
+.searchBooks{
+    width: 950px;
+    margin: 50px 0;
+    overflow: hidden;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.searchBooks__book {
+    width: 90%;
+    height: 100px;
+    margin: 40px;
+    border-radius: 10px;
+    background-color: #e0ddd1;
+    display: flex;
+    padding: 20px 20px;
+  }
+  
+  .searchBooks__Title {
+    margin: 20px 0 0 10px;
+  }
+  
+  .searchBooks__image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  
+  .searchBooks__title {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .searchBooks__description {
+    width: 500px;
+    word-wrap: break-word;
+    margin-top: 10px;
+    font-size: 14px;
+  }

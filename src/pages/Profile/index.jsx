@@ -8,9 +8,7 @@ import UserBooks from "../../components/UserBooks";
 export default function Profile() {
   const [accountInfo, setAccountInfo] = useState({});
 
-  const accountInfoReq = GetAccountApi.getAccount(
-    localStorage.getItem("userId")
-  );
+  const accountInfoReq = GetAccountApi.getAccount(localStorage.getItem("userId"));
   accountInfoReq.then((res) => setAccountInfo(res));
 
   return (
