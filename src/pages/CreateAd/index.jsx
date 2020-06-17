@@ -8,7 +8,7 @@ export default function CreateAd() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
-  const [genres, setGenres] = useState(["romance", "comedia"]);
+  const [categories, setCategories] = useState([]);
   const [image, setImage] = useState(
     "https://www.bauducco.com.br/wp-content/uploads/2017/09/default-placeholder-1-2.png"
   );
@@ -19,13 +19,16 @@ export default function CreateAd() {
       title,
       description,
       location,
-      genres,
+      categories,
       image,
       localStorage.getItem("userId")
     );
     history.push("/");
     window.location.reload();
   }
+
+  const handleCategories = (newCategory) => {setCategories(categories => [...categories, newCategory])};
+  
 
   return (
     <main>
@@ -55,7 +58,38 @@ export default function CreateAd() {
           </div>
         </div>
 
-        <div className="createAd_genres">genres</div>
+        <div className="createAd_genres">
+            <div className="radio">
+              <label>
+                <input type="radio" value="Romance" onClick={e => {handleCategories(e.target.value)}}/>
+                Romance
+              </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input type="radio" value="Comedy" onClick={e => {handleCategories(e.target.value)}}/>
+                Comedy
+              </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input type="radio" value="Action" onClick={e => {handleCategories(e.target.value)}}/>
+                Action
+              </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input type="radio" value="Sci-fi" onClick={e => {handleCategories(e.target.value)}}/>
+                Sci-Fi
+              </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input type="radio" value="Drama" onClick={e => {handleCategories(e.target.value)}}/>
+                Drama
+              </label>
+            </div>
+        </div>
 
         <button onClick={() => handleCreateBook()} className="createAd_button">
           Post
