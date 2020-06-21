@@ -16,6 +16,26 @@
   padding: 20px 20px;
 }
 
+.userBooks__details__link{
+  display: flex;
+  text-decoration: none;
+  width: 70%;
+}
+
+.userBooks__button{
+  height: 35px;
+  width: 140px;
+  background-color:#fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s;
+  margin: 10px 0 0 0;
+}
+
+.userBooks__button:hover{
+  background-color: #c8c3b7;
+}
+
 .userBooks__Title {
   margin: 20px 0 0 10px;
 }
@@ -36,4 +56,83 @@
   word-wrap: break-word;
   margin-top: 10px;
   font-size: 14px;
+}
+
+.userBooks__editProfile__modal{
+  position: absolute;
+  left: 25%;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 700px;
+  height: 600px;
+  overflow: auto;
+  background-color: #ded9cc;
+}
+
+.userBooks__image__modal{
+  width: 90px;
+  height: 90px;
+}
+
+.userBooks__close__modal{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.userBooks__input__modal{
+  height: 30px;
+  width: 400px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.userBooks__camps__modal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.userBooks__inputBio__modal{
+  height: 90px;
+  width: 400px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-left: 10px;
+  resize: none;
+}
+
+.userBooks__camps__label{
+  align-self: flex-start;
+  margin: 0 0 6px 20px;
+
+}
+
+.userBooks__inputpass__modal{
+  height: 30px;
+  width: 400px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.UserBooks_genres{
+  width: 85%;
+  height: 110px;
+  background-color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  
 }

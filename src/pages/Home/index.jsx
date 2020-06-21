@@ -4,8 +4,9 @@ import Search from "../../components/Search";
 
 export default function Home() {
   return (
-    <main>
-      <Search />
+    <main className="home__main">
+      <Search/>
+      <h1 className="home__title">Trade your books for free!</h1>
     </main>
   );
 }
