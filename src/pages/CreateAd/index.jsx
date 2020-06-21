@@ -8,7 +8,7 @@ export default function CreateAd() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState("");
   const [image, setImage] = useState(
     "https://www.bauducco.com.br/wp-content/uploads/2017/09/default-placeholder-1-2.png"
   );
@@ -27,8 +27,9 @@ export default function CreateAd() {
     window.location.reload();
   }
 
-  const handleCategories = (newCategory) => {setCategories(categories => [...categories, newCategory])};
-  
+  const handleCategories = (newCategory) => {
+    setCategories(newCategory);
+  };
 
   return (
     <main>
@@ -58,38 +59,79 @@ export default function CreateAd() {
           </div>
         </div>
 
-        <div className="createAd_genres">
-            <div className="radio">
-              <label>
-                <input type="radio" value="Romance" onClick={e => {handleCategories(e.target.value)}}/>
-                Romance
-              </label>
-            </div>
-            <div className="radio">
-              <label>
-                <input type="radio" value="Comedy" onClick={e => {handleCategories(e.target.value)}}/>
-                Comedy
-              </label>
-            </div>
-            <div className="radio">
-              <label>
-                <input type="radio" value="Action" onClick={e => {handleCategories(e.target.value)}}/>
-                Action
-              </label>
-            </div>
-            <div className="radio">
-              <label>
-                <input type="radio" value="Sci-fi" onClick={e => {handleCategories(e.target.value)}}/>
-                Sci-Fi
-              </label>
-            </div>
-            <div className="radio">
-              <label>
-                <input type="radio" value="Drama" onClick={e => {handleCategories(e.target.value)}}/>
-                Drama
-              </label>
-            </div>
-        </div>
+        <form className="createAd_genres">
+          <p className="createAd_genreTitle">Select the genre of your book</p>
+          <input
+            type="radio"
+            name="genres"
+            id="romance"
+            value="romance"
+            onClick={(e) => {
+              handleCategories(e.target.value);
+            }}
+          />
+          <label for="romance">Romance</label>
+
+          <input
+            type="radio"
+            name="genres"
+            id="comedy"
+            value="comedy"
+            className="createAd_genreOption"
+            onClick={(e) => {
+              handleCategories(e.target.value);
+            }}
+          />
+          <label for="comedy">Comedy</label>
+
+          <input
+            type="radio"
+            name="genres"
+            id="action"
+            value="action"
+            className="createAd_genreOption"
+            onClick={(e) => {
+              handleCategories(e.target.value);
+            }}
+          />
+          <label for="action">Action</label>
+
+          <input
+            type="radio"
+            name="genres"
+            id="sci-fi"
+            value="sci-fi"
+            className="createAd_genreOption"
+            onClick={(e) => {
+              handleCategories(e.target.value);
+            }}
+          />
+          <label for="sci-fi">Sci-Fi</label>
+
+          <input
+            type="radio"
+            name="genres"
+            id="drama"
+            value="drama"
+            className="createAd_genreOption"
+            onClick={(e) => {
+              handleCategories(e.target.value);
+            }}
+          />
+          <label for="drama">Drama</label>
+
+          <input
+            type="radio"
+            name="genres"
+            id="other"
+            value="other"
+            className="createAd_genreOption"
+            onClick={(e) => {
+              handleCategories(e.target.value);
+            }}
+          />
+          <label for="other">Other</label>
+        </form>
 
         <button onClick={() => handleCreateBook()} className="createAd_button">
           Post

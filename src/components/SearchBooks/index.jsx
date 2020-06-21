@@ -3,14 +3,14 @@ import "./styles.css";
 import { Link } from "react-router-dom";
 import GetAllBooksApi from "../../js/get-all-books-api";
 
-export default function UserBooks() {
+export default function SearchBooks() {
   const [bookInfo, setBookInfo] = useState([]);
-
-  const bookInfoReq = GetAllBooksApi.getBooks();
+  const bookInfoReq = GetAllBooksApi.getBooks(localStorage.getItem("bookTitle"));
   bookInfoReq.then((res) => setBookInfo(res));
 
   const handleBookClick = (id) => {
-    localStorage.setItem("bookId", id);
+    localStorage.
+    setItem("bookId", id);
   }
 
   return (

@@ -71,3 +71,11 @@
 .createAd_button:hover {
   background-color: #c8c3b7;
 }
+
+.createAd_genreTitle{
+  margin: 0 0 10px 0;
+}
+
+.createAd_genreOption{
+  margin:0 10px 0 10px
+}

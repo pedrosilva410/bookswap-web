@@ -4,8 +4,9 @@
     background-color: #e0ddd1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
+    margin-bottom: 100px;
   }
   
   .home__form {
@@ -19,17 +20,7 @@
   }
   
   .home__search__input {
-    width: 350px;
-    height: 40px;
-    padding: 0 10px;
-    border: none;
-    border-style: none;
-    border-radius: 10px;
-    font-size: 16px;
-  }
-  
-  .home__location__input {
-    width: 200px;
+    width: 550px;
     height: 40px;
     padding: 0 10px;
     border: none;

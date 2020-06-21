@@ -29,3 +29,87 @@
   padding-top: 20px;
   font-size: 14px;
 }
+
+.profile__editProfile{
+  height: 35px;
+  width: 140px;
+  background-color: #ded9cc;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.profile__editProfile:hover{
+  background-color: #c8c3b7;
+}
+
+.profile__editProfile__modal{
+  position: absolute;
+  left: 25%;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 700px;
+  height: 600px;
+  overflow: auto;
+  background-color: #ded9cc;
+}
+
+.profile__image__modal{
+  width: 90px;
+  height: 90px;
+}
+
+.profile__close__modal{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.profile__input__modal{
+  height: 30px;
+  width: 400px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.profile__camps__modal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile__inputBio__modal{
+  height: 90px;
+  width: 400px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-left: 10px;
+  resize: none;
+}
+
+.profile__camps__label{
+  align-self: flex-start;
+  margin: 0 0 6px 20px;
+
+}
+
+.profile__inputpass__modal{
+  height: 30px;
+  width: 400px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
