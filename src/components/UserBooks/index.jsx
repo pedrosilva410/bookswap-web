@@ -1,13 +1,15 @@
 import React, { Fragment, useState } from "react";
-import "./styles.css";
 import { Link } from "react-router-dom";
-import GetUserBooksApi from "../../js/get-user-books-api";
 import Modal from "react-modal";
+import "./styles.css";
+
+import GetUserBooksApi from "../../js/get-user-books-api";
+import DeleteBookApi from "../../js/delete-book-api";
+import EditBookApi from "../../js/edit-book-api"
 
 export default function UserBooks() {
   const [bookInfo, setBookInfo] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [categories, setCategories] = useState("");
 
   const bookInfoReq = GetUserBooksApi.getUserBooks(
     localStorage.getItem("userId")
@@ -21,6 +23,11 @@ export default function UserBooks() {
   const handleCategories = (newCategory) => {
     setCategories(newCategory);
   };
+
+  const [title, setTitle]= useState(bookInfo.title)
+  const [description, setDescription]= useState(bookInfo.description)
+  const [categories, setCategories] = useState(bookInfo.genres);
+  const [location, setlocation] = useState(bookInfo.location);
 
   return (
     <Fragment>
@@ -50,7 +57,13 @@ export default function UserBooks() {
               >
                 edit book
               </button>
-              <button className="userBooks__button">delete book</button>
+              <button 
+              className="userBooks__button"
+              onClick={()=>{
+                handleBookClick(id);
+                DeleteBookApi.deleteBook(localStorage.getItem("bookId"));
+            }}
+              >delete book</button>
             </div>
           </li>
         ))}
@@ -68,13 +81,18 @@ export default function UserBooks() {
 
         <div className="userBooks__camps__modal">
           <p className="userBooks__camps__label">Edit title</p>
-          <input type="text" className="userBooks__input__modal" />
+          <input onChange={e=>setTitle(e.target.value)} type="text" className="userBooks__input__modal" />
         </div>
 
         <div className="userBooks__camps__modal">
           <p className="userBooks__camps__label">Edit description</p>
-          <textarea className="userBooks__inputBio__modal" />
+          <textarea onChange={e=>setDescription(e.target.value)} className="userBooks__inputBio__modal" />
         </div>
+
+        <div className="userBooks__camps__modal">
+            <p className="userBooks__camps__label">Edit Location</p>
+            <input onChange={e=>setlocation(e.target.value)} className="userBooks__input__modal" />
+          </div>
 
         <form className="UserBooks_genres">
           <p className="createAd_genreTitle" >Select the genre of your book</p>
@@ -149,6 +167,15 @@ export default function UserBooks() {
             }}
           />
           <label for="other">Other</label>
+            
+            <button
+            className="profile__editProfile"
+            onClick={()=>{
+              EditBookApi.editBook(title, description, location, categories, localStorage.getItem("bookId"))
+            }}
+            >
+              Save Changes
+            </button>
         </form>
       </Modal>
     </Fragment>

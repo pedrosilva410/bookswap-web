@@ -40,9 +40,14 @@
 
 .bookDetails__categories {
   height: 40px;
-  width: 540px;
+  width: 250px;
   padding: 10px 0 0 10px;
   background-color: #ded9cc;
+  margin-right: 20px;
+}
+
+.bookDetails__catloc{
+  display: flex;
 }
 
 
