@@ -1,10 +1,12 @@
 import React from "react";
-import UserPhoto from "../../assets/SVG/account.svg";
-import "./styles.css";
 import Modal from "react-modal";
-import GetAccountApi from "../../js/get-account-api";
 import { useState } from "react";
+import "./styles.css";
+import UserPhoto from "../../assets/SVG/account.svg";
+
 import UserBooks from "../../components/UserBooks";
+import GetAccountApi from "../../js/get-account-api";
+import EditProfileApi from "../../js/edit-profile-api";
 
 export default function Profile() {
   const [accountInfo, setAccountInfo] = useState({});
@@ -14,6 +16,13 @@ export default function Profile() {
     localStorage.getItem("userId")
   );
   accountInfoReq.then((res) => setAccountInfo(res));
+
+  const [userName, setUserName]= useState(accountInfo.userName)
+  const [bio, setBio]= useState(accountInfo.bio)
+  const [email, setEmail]= useState(accountInfo.email)
+  const [contact, setContact]= useState(accountInfo.contact)
+  const [password, setPassword]= useState(accountInfo.password)
+  const [confirmPassword, setConfirmPassword]= useState(accountInfo.password)
 
   return (
     <main>
@@ -50,29 +59,43 @@ export default function Profile() {
 
         <div className="profile__camps__modal">
           <p className="profile__camps__label">Edit name</p>
-          <input type="text" className="profile__input__modal" placeholder={accountInfo.userName}/>
+          <input onChange={e=>setUserName(e.target.value)} type="text" className="profile__input__modal" placeholder={accountInfo.userName}/>
         </div>
 
         <div className="profile__camps__modal">
         <p className="profile__camps__label">Edit bio</p>
-        <textarea className="profile__inputBio__modal" placeholder={accountInfo.bio}/>
+        <textarea onChange={e=>setBio(e.target.value)} className="profile__inputBio__modal" placeholder={accountInfo.bio}/>
         </div>
 
         <div className="profile__camps__modal">
         <p className="profile__camps__label">Edit email</p>
-        <input type="text" className="profile__input__modal" placeholder={accountInfo.email}/>
+        <input onChange={e=>setEmail(e.target.value)} type="text" className="profile__input__modal" placeholder={accountInfo.email}/>
         </div>
 
         <div className="profile__camps__modal">      
         <p className="profile__camps__label">Edit phone number</p>
-        <input type="text" className="profile__input__modal" placeholder={accountInfo.contact}/>
+        <input onChange={e=>setContact(e.target.value)} type="text" className="profile__input__modal" placeholder={accountInfo.contact}/>
         </div>
 
         <div className="profile__camps__modal">      
         <p className="profile__camps__label">Edit password</p>
-        <input type="password" className="profile__input__modal" placeholder="New password"/>
-        <input type="password" className="profile__inputpass__modal" placeholder="Confirm new passoword"/>
+        <input onChange={e=>setPassword(e.target.value)} type="password" className="profile__input__modal" placeholder="New password"/>
+        <input onChange={e=>setConfirmPassword(e.target.value)} type="password" className="profile__inputpass__modal" placeholder="Confirm new passoword"/>
         </div>
+
+        <button
+        className="profile__editProfile"
+        onClick={()=>{
+          if(password!==confirmPassword){
+            alert("passwords don't match")
+          } else {
+            EditProfileApi.editAccount(userName, email, password, bio, contact, localStorage.getItem("userId"));
+            setIsModalOpen(false);
+          }
+        }}
+        >
+          Save Changes
+        </button>
       </Modal>
     </main>
   );
