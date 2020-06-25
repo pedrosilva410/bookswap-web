@@ -17,16 +17,13 @@ export default function BookDetails() {
   const accountInfoReq = GetAccountApi.getAccount(bookInfo.user);
   accountInfoReq.then((res) => setAccountInfo(res));
 
-  let categories = [bookInfo.genres];
-  console.log(isModalOpen);
-
   return (
     <main>
       <div className="bookDetails__bookInfo">
         <img
           className="bookDetails__bookImage"
           src={bookInfo.image}
-          alt="Book image"
+          alt="Book_image"
         />
         <div className="bookDetails__text">
           <h3 className="bookDetails__bookTitle">{bookInfo.title}</h3>
@@ -47,7 +44,7 @@ export default function BookDetails() {
       <Modal className="bookDetails__contact__modal" isOpen={isModalOpen}>
         <img
           src={UserPhoto}
-          alt="User Photo"
+          alt="User_Photo"
           className="bookDetails__contact__image__modal"
         />
         <div className="bookDetails__contact__div__modal">

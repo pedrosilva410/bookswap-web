@@ -9,9 +9,8 @@ export default function CreateAd() {
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [categories, setCategories] = useState("");
-  const [image, setImage] = useState(
-    "https://www.bauducco.com.br/wp-content/uploads/2017/09/default-placeholder-1-2.png"
-  );
+  const image = "https://www.bauducco.com.br/wp-content/uploads/2017/09/default-placeholder-1-2.png"
+  
   const history = useHistory();
 
   function handleCreateBook() {
