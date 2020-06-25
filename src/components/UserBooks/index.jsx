@@ -42,7 +42,7 @@ export default function UserBooks() {
             key={id}
           >
             <Link className="userBooks__details__link" to="/bookdetails">
-              <img src={image} className="userBooks__image" />
+              <img src={image} alt="Book_image" className="userBooks__image" />
               <div className="userBooks__details">
                 <p className="userBooks__title">{title}</p>
                 <p className="userBooks__description">{description}</p>

@@ -8,10 +8,7 @@ export default function SearchBooks() {
   const bookInfoReq = GetAllBooksApi.getBooks(localStorage.getItem("bookTitle"));
   bookInfoReq.then((res) => setBookInfo(res));
 
-  const handleBookClick = (id) => {
-    localStorage.
-    setItem("bookId", id);
-  }
+  const handleBookClick = (id) => localStorage.setItem("bookId", id)
 
   return (
     <Fragment>
@@ -19,7 +16,7 @@ export default function SearchBooks() {
         {bookInfo.map(({ id, title, description, image }) => (
           <Link to="/bookdetails">
           <li onClick={()=>{handleBookClick(id)}} className="searchBooks__book" key={id}>
-            <img src={image} className="searchBooks__image" />
+            <img src={image} className="searchBooks__image" alt="book_image" />
             <div>
               <p className="searchBooks__title">{title}</p>
               <p className="searchBooks__description">{description}</p>
